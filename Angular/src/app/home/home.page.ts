@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  alunos: any = [
+    {nome: 'gazes', email: 'isaac@gmail.com'}
+    {nome: 'isaac', email: 'gazes@gmail.com'}
+  ]
+  
 
-  pokemon:any = {
-    nome: null,
-    poder: null
   };
 
   constructor( 
