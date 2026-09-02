@@ -11,8 +11,8 @@ import { MenuComponent } from './menu.component';
     CommonModule,
     IonicModule
   ],
-  exports: [MenuComponent
-    
+  exports: [
+    MenuComponent
   ]
 })
 export class MenuModule { }

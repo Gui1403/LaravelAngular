@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Aluno;
 use App\Http\Requests\StoreAlunoRequest;
 use App\Http\Requests\UpdateAlunoRequest;
+use App\Models\Aluno;
 
 class AlunoController extends Controller
 {
@@ -13,12 +13,12 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        $aluno = [
-            ["nome" =>"Miranata", "email"=>"m@hotmail.com"],
-            ["nome" =>"Barata", "email"=>"b@hotmail.com"],
+        $alunos = [
+            ["nome"=>"Miranata", "email"=>"m@hotmail.com"],
+            ["nome"=>"Barata", "email"=>"b@hotmail.com"],
         ];
 
-        return $aluno;
+        return $alunos;
     }
 
     /**

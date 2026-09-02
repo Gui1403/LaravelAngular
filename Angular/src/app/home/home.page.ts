@@ -12,19 +12,23 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   alunos: any = [
-    {nome: 'gazes', email: 'isaac@gmail.com'}
-    {nome: 'isaac', email: 'gazes@gmail.com'}
-  ]
-  
-
-  };
+    {nome: 'gazes', email: 'gazes@pintinho.com'},
+    {nome: 'isaac', email: 'isaac@pajédadafumaça.beck'}
+  ];
+  titulo: string = 'listagem de alunos'
+  subtitulo: string = 'sistema integrado de gestão'
 
   constructor( 
-    public crudService: CrudService
+   fetch("http://127.0.0.1:8000/aluno/index")
+   .then(resp => resp.json)
+   .then(resp => {
+    this.alunos = resp
+   })
+   .catch(erro => {console.log(erro)})
+   .finally(()=>{
+    console.log('request finished')
+   })
   ){ }
 
-  enviar() {
-    this.crudService.insert(this.pokemon, 'pokemons');
-  }
-
+  
 }
