@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { AuthenticateService } from '../services/auth.service';
-import { CrudService } from '../services/crud.service';
 import { Storage, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { MessageService } from '../services/message.service';
 import { Router } from '@angular/router';
+import { CrudService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -11,24 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  alunos: any = [
-    {nome: 'gazes', email: 'gazes@pintinho.com'},
-    {nome: 'isaac', email: 'isaac@pajédadafumaça.beck'}
-  ];
-  titulo: string = 'listagem de alunos'
-  subtitulo: string = 'sistema integrado de gestão'
 
   constructor( 
-   fetch("http://127.0.0.1:8000/aluno/index")
-   .then(resp => resp.json)
-   .then(resp => {
-    this.alunos = resp
-   })
-   .catch(erro => {console.log(erro)})
-   .finally(()=>{
-    console.log('request finished')
-   })
+    public crudService: CrudService
   ){ }
 
-  
 }

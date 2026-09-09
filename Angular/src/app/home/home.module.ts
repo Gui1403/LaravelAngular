@@ -5,8 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { IncrementerModule } from '../shared/components/incrementer/incrementer.module';
-import { MenuModule } from '../shared/components/menu/menu.module';
 
 
 @NgModule({
@@ -14,9 +12,7 @@ import { MenuModule } from '../shared/components/menu/menu.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    IncrementerModule,
-    MenuModule
+    HomePageRoutingModule
   ],
   declarations: [HomePage]
 })
